@@ -1,0 +1,90 @@
+body {
+    font-size: 0.9em;
+    color: #212121;
+    font-family: Arial;
+}
+.container{
+    position: absolute;
+	width: 350px;
+    margin: 170px 300px auto 470px;
+    box-sizing: border-box;
+    clear:both;
+}
+
+#frm-mobile-verification {
+    border: #E0E0E0 1px solid;
+    border-radius: 3px;
+    padding: 30px;
+    text-align: center;
+}
+
+#registration_form{
+    border: #E0E0E0 1px solid;
+    border-radius: 3px;
+    padding: 30px;
+    text-align: center;
+    width: max-content;
+}
+
+.form-heading {
+    font-size: 1.5em;
+    margin-bottom: 30px;
+}
+
+.form-row {
+    margin-bottom: 30px;
+}
+
+.form-input {
+    padding: 10px 20px;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 3px;
+    border: #E0E0E0 1px solid;
+    margin-top:10px;
+}
+
+.btnSubmit {
+    background: #4cb7ff;
+    padding: 8px 20px;
+    border: #47abef 1px solid;
+    border-radius: 3px;
+    width: 100%;
+    color: #FFF;
+}
+
+
+.error {
+    color: #red;
+    padding: 15px;
+    background: #ffbcbc;
+    border: #efb0b0 1px solid;
+    border-radius: 3px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 350px;
+    display:none;
+    box-sizing: border-box;
+}
+
+.success {
+    color: #483333;
+    padding: 10px 20px;
+    background: #cff9b5;
+    border: #bce4a3 1px solid;
+    border-radius: 3px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    width: 350px;
+    display:none;
+    box-sizing: border-box;
+}
+
+.btnVerify {
+    background: #4CAF50;
+    padding: 8px 20px;
+    border: #449e48 1px solid;
+    border-radius: 3px;
+    width: 100%;
+    color: #FFF;
+}

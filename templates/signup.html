@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">OTP Service</a>
+      </div>
+      <ul>
+        <li><a href = "{{url_for('home')}}">Home</a></li>
+        <li><a href = "{{url_for('about')}}">About</a></li>
+        <li><a href = "{{url_for('services')}}">Services</a></li>
+        <li><a href = "{{url_for('contact')}}">Contact</a></li>
+        <li><a href = "{{url_for('feedback')}}">Feedback</a></li>
+        <li><a href = "{{url_for('login')}}">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  	<div class="container">
+
+        <form method = "post" action = "/signup_submit" id="registration_form">
+            <table>
+                <caption><b>Sign Up</b></caption>
+                 <span>{{msg}}</span>
+                <tr><td>First Name</td><td><input type = 'name' name = 'first_name' class="form-input"></td></tr>
+                <tr><td>Last Name</td><td><input type = 'name' name = 'last_name' class="form-input"></td></tr>
+                <tr><td>Email Id</td><td><input type = 'email' name = 'email' class="form-input"></td></tr>
+                <tr><td>Password</td><td><input type = 'password' name = 'password' class="form-input"></td></tr>
+                <tr><td>Confirm Password</td><td><input type = 'password' name = 'confirm_password' class="form-input"></td></tr>
+                <tr><td>Mobile Number</td><td><input type = 'mobile_no' name = 'mobile_no' class="form-input"></td></tr>
+                <tr><td>Date Of Birth</td><td><input type = 'date' name = 'dob' class="form-input"></td></tr>
+                <tr><td>City</td><td><input type = 'city' name = 'city' class="form-input"></td></tr>
+                <tr><td>Country</td><td><input type = 'country' name = 'country' class="form-input"></td></tr>
+                <tr><td colspan="2"><input type = "submit" style="margin-top:10px;" value = "Submit" class="btnSubmit" class="form-input"></td></tr>
+            </table>
+             <a href = "{{url_for('login')}}">Sign in here</a>
+        </form>
+
+    </div>
+<footer class="text-center">
+  <p>Copyright &copy; OTPService.com</p>
+</footer>
+</body>
+</html>

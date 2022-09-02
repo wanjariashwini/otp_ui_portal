@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">OTP Service</a>
+      </div>
+      <ul>
+        <li><a href = "{{url_for('home')}}">Home</a></li>
+        <li><a href = "{{url_for('about')}}">About</a></li>
+        <li><a href = "{{url_for('services')}}">Services</a></li>
+        <li><a href = "{{url_for('contact')}}">Contact</a></li>
+        <li><a href = "{{url_for('feedback')}}">Feedback</a></li>
+        <li><a href = "{{url_for('login')}}">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">Create Amazing Website</div>
+    <div class="sub_title">Pure HTML & CSS Only</div>
+    <div class="btns">
+      <button onclick="{{url_for('services')}}">Learn More</button>
+      <button onclick="{{url_for('signup')}}">Subscribe</button>
+    </div>
+  </div>
+</body>
+<footer class="text-center">
+  <p>Copyright &copy; OTPService.com</p>
+</footer>
+</html>

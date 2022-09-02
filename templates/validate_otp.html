@@ -1,0 +1,68 @@
+<!--
+https://phppot.com/php/how-to-implement-otp-sms-mobile-verification-in-php-with-textlocal/
+https://untiedblogs.com/the-best-html-and-css-projects-with-source-code/
+https://www.codinglabweb.com/2020/12/create-website-in-html-css-only-design.html
+-->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Demo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}"  type="text/css" rel="stylesheet" >
+	  <link href="{{ url_for('static', filename='css/demo.css') }}" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script>
+        function enabledOnKeyUp(){
+            var sendOTPBtn = document.getElementById("sendOTPBtn");
+            if(){
+
+            }else{
+                document.getElementById("myBtn").disabled = true;
+            }
+        }
+
+    </script>
+  </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">OTP Service</a>
+      </div>
+      <ul>
+        <li><a href = "{{url_for('home')}}">Home</a></li>
+        <li><a href = "{{url_for('about')}}">About</a></li>
+        <li><a href = "{{url_for('services')}}">Services</a></li>
+        <li><a href = "{{url_for('contact')}}">Contact</a></li>
+        <li><a href = "{{url_for('feedback')}}">Feedback</a></li>
+       {% if session['email-id'] %}
+            <li><a href = "{{url_for('logout')}}">Logout</a></li>
+        {% else %}
+            <li><a href = "{{url_for('login')}}">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+	<div class="container">
+		<div class="error"></div>
+        <form id="frm-mobile-verification" action="/validateOTP" method="post">
+			<div class="form-heading">Enter OTP for Validation</div>
+			<div class="form-row">
+                <input type="number" id="mob_no" name="mob_no" value="{{mobile_no}}" class="form-input" disabled>
+				<input type="number" id="otp" name="otp" class="form-input"
+					placeholder="Enter the OTP">
+                <input type="hidden" name="session_key" value="{{session_key}}">
+			</div>
+                <input type="submit" id="sendOTPBtn" class="btnSubmit" value="validate OTP"
+                    onClick="validateOTP();" onkeyup="enabledOnKeyUp();">
+
+		</form>
+	</div>
+
+<footer class="text-center">
+  <p>Copyright &copy; OTPService.com</p>
+</footer>
+</body>
+</html>

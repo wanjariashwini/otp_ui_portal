@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <script>
+        function aboutAPI(){
+            window.location.href="/aboutAPI";
+        }
+    </script>
+      <script>
+        function signup(){
+            window.location.href="/signup";
+        }
+    </script>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">OTP Service</a>
+      </div>
+      <ul>
+        <li><a href = "{{url_for('home')}}">Home</a></li>
+        <li><a href = "{{url_for('about')}}">About</a></li>
+        <li><a href = "{{url_for('services')}}">Services</a></li>
+        <li><a href = "{{url_for('contact')}}">Contact</a></li>
+        <li><a href = "{{url_for('feedback')}}">Feedback</a></li>
+
+        {% if session['email-id'] %}
+            <li><a href = "{{url_for('logout')}}">Logout</a></li>
+        {% else %}
+            <li><a href = "{{url_for('login')}}">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  <div class="img"></div>
+  <div class="center">
+    <div class="title">Ready to Use API</div>
+    <div class="sub_title">For web developer and students</div>
+    <div class="btns">
+      <button onclick="aboutAPI();>Learn More</button>
+      <button onclick="signup();>Subscribe</button>
+    </div>
+  </div>
+</body>
+<footer class="text-center">
+  <p>Copyright &copy; OTPService.com</p>
+</footer>
+</html>

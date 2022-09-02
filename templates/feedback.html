@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {text-align: center;
+            }
+
+    nav{
+      position: relative}
+
+    input[type=text], select, textarea {
+      width: 80%;
+      padding: 12px;
+      border: 1px solid rgb(70, 68, 68);
+      border-radius: 4px;
+      resize: vertical;
+    }
+    input[type=email], select, textarea {
+      width: 80%;
+      padding: 12px;
+      border: 1px solid rgb(70, 68, 68);
+      border-radius: 4px;
+      resize: vertical;
+    }
+
+    label {
+      padding: 12px 12px 12px 0;
+      display: inline-block;
+    }
+
+    input[type=submit] {
+      background-color: rgb(37, 116, 161);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      float: right;
+    }
+
+    input[type=submit]:hover {
+      background-color: #45a049;
+    }
+
+    .container {
+      position: relative;
+      //margin-top: 10px;
+      border-radius: 5px;
+      background-color: #f2f2f2;
+      padding: 20px;
+    }
+
+    .col-25 {
+      float: left;
+      width: 25%;
+      margin-top: 6px;
+    }
+
+    .col-75 {
+      float: left;
+      width: 75%;
+      margin-top: 6px;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+      content: "";
+      display: table;
+      clear: both;
+    }
+
+    /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+    </style>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">OTP Service</a>
+      </div>
+      <ul>
+        <li><a href = "{{url_for('home')}}">Home</a></li>
+        <li><a href = "{{url_for('about')}}">About</a></li>
+        <li><a href = "{{url_for('services')}}">Services</a></li>
+        <li><a href = "{{url_for('contact')}}">Contact</a></li>
+        <li><a href = "{{url_for('feedback')}}">Feedback</a></li>
+        {% if session['email-id'] %}
+            <li><a href = "{{url_for('logout')}}">Logout</a></li>
+        {% else %}
+            <li><a href = "{{url_for('login')}}">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+
+    <div class="container">
+      <h2>FEED BACK FORM</h2>
+      <form>
+        <div class="row">
+          <div class="col-25">
+            <label for="fname">First Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Last Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+              <label for="email">Mail Id</label>
+            </div>
+            <div class="col-75">
+              <input type="email" id="email" name="mailid" placeholder="Your mail id..">
+            </div>
+          </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="country">Country</label>
+          </div>
+          <div class="col-75">
+            <select id="country" name="country">
+                <option value="none">Select Country</option>
+              <option value="australia">Australia</option>
+              <option value="canada">Canada</option>
+              <option value="usa">USA</option>
+              <option value="russia">Russia</option>
+              <option value="japan">Japan</option>
+              <option value="india">India</option>
+              <option value="china">China</option>
+            </select>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-25">
+            <label for="feed_back">Feed Back</label>
+          </div>
+          <div class="col-75">
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+          </div>
+        </div>
+        <div class="row">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+
+</body>
+<footer class="text-center">
+  <p>Copyright &copy; OTPService.com</p>
+</footer>
+</html>

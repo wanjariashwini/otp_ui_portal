@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <style>
+      body {text-align: center;
+            }
+
+      h2 {
+         margin-top: 3%;
+         margin-bottom: 1%;
+          }
+      h3 {
+          margin-top: 0.8%;
+          margin-bottom: 0.5%   ;}
+      p {
+         margin-right: 5%;
+         margin-left: 5%;
+         }
+      #firstone {margin-top: 5%;}
+
+      #last {margin-bottom: 170%;}
+
+    </style>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">OTP Service</a>
+      </div>
+      <ul>
+         <li><a href = "{{url_for('home')}}">Home</a></li>
+        <li><a href = "{{url_for('about')}}">About</a></li>
+        <li><a href = "{{url_for('services')}}">Services</a></li>
+        <li><a href = "{{url_for('contact')}}">Contact</a></li>
+        <li><a href = "{{url_for('feedback')}}">Feedback</a></li>
+        {% if session['email-id'] %}
+            <li><a href = "{{url_for('logout')}}">Logout</a></li>
+        {% else %}
+            <li><a href = "{{url_for('login')}}">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  <br><br>
+  <h2 id = "firstone">What is OTP service?</h2>
+  <p>OTP service is the easiest way of verifying user information and authenticating online transactions.
+    Used by businesses to boost data security and prevent phishing attacks,
+    an OTP service provider ensures timely delivery of OTPs to the right customers via SMSes.</p>
+  <h2>How OTP service works</h2>
+  <h3>1. Verification request</h3>
+  <p>Customer clicks on the ‘Verify’ button on your app or website and
+    a unique OTP is generated in your backend system</p>
+  <h3>2. Verification</h3>
+  <p>It fetches the generated OTP and sends it to your customer’s registered mobile number
+    (This can be done either through SMSes)</p>
+  <h3>3. Number is verified</h3>
+  <p>Your customer enters the unique OTP sent on your app or website and gets verified instantly</p>
+  <h2>How can businesses use OTP service</h2>
+  <h3>1. Two-factor authentication (2FA)</h3>
+  <p>Implement an extra layer of security in your systems, without adding complexity to your customers.</p>
+  <h3>2. Spam prevention</h3>
+  <p>Effectively control spam registrations, and avoid fake signups.
+    Optimize and secure your backend systems against spam.</p>
+  <h3>3. Password Resets</h3>
+  <p>Instead of sending codes or links via email, use the OTP service to verify users before password resets.</p>
+  <h3>4. Passwordless logins</h3>
+  <p>Do away with passwords as your customers can be verified using an OTP every time they log in to your system.</p>
+  <h3>5. Account Reactivations</h3>
+  <p>Reactivate a user account with a confirmed acceptance from them.
+    Use OTP verification as a means of verifying identity.</p>
+  <h3>6. Transaction Authentication</h3>
+  <p>Keep all transactions safe and sound.
+    Add an additional layer of security with OTP verification to ensure safe transactions.</p>
+  <h2>Advantages of Using OTP Services</h2>
+  <h3>1. Cost-Effective</h3>
+  <p>It is OTP service provider that grows with you. Pay as you scale and never overspend on your resources.</p>
+  <h3>2. No Delay</h3>
+  <p>Don’t keep a customer waiting for any more than 8 seconds.
+    Our OTP service ensures timely delivery of the OTP messages.</p>
+  <h3>3. Operational Efficiency</h3>
+  <p id=last">Send thousands of OTP verification messages without having to run multiple numbers.
+    Our OTP service can handle them all!</p><br><br>
+</body>
+<footer class="text-center">
+  <p>Copyright &copy; OTPService.com</p>
+</footer>
+</html>

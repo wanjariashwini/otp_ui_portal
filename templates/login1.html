@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">OTP Service</a>
+      </div>
+      <ul>
+         <li><a href = "{{url_for('home')}}">Home</a></li>
+        <li><a href = "{{url_for('about')}}">About</a></li>
+        <li><a href = "{{url_for('services')}}">Services</a></li>
+        <li><a href = "{{url_for('contact')}}">Contact</a></li>
+        <li><a href = "{{url_for('feedback')}}">Feedback</a></li>
+        {% if session['email-id'] %}
+            <li><a href = "{{url_for('logout')}}">Logout</a></li>
+        {% else %}
+            <li><a href = "{{url_for('login')}}">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  <!-- Here my login form will have all details -->
+	<div class="container">
+
+		<form id="frm-mobile-verification" action="/slogin1" method="post">
+			<div class="form-heading">Login</div>
+            <div class="error">{{error}}</div>
+			<div class="form-row">
+				<input type="text" id="username" name="username" class="form-input"
+					placeholder="Enter the username">
+              <input type="password" id="password" name="password" class="form-input"
+					placeholder="Enter the password">
+			</div>
+			<input type="submit" class="btnSubmit" value="Login" />
+            <a href = "{{url_for('signup')}}">Sign Up here</a>
+		</form>
+	</div>
+</body>
+<footer class="text-center">
+  <p>Copyright &copy; OTPService.com</p>
+</footer>
+</html>

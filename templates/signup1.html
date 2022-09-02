@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">OTP Service</a>
+      </div>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Feedback</a></li>
+        <li><a href = "{{url_for('login')}}">Login</a></li>
+      </ul>
+    </div>
+  </nav>
+  	<div class="container">
+        <span>{{result}}</span>
+        <form method = "post" action = "http://localhost:5001/signup_submit">
+            <table>
+                <tr><td>First Name</td><td><input type = 'name' name = 'first_name'></td></tr>
+                <tr><td>Last Name</td><td><input type = 'name' name = 'last_name'></td></tr>
+                <tr><td>Email Id</td><td><input type = 'email' name = 'email'></td></tr>
+                <tr><td>Mobile Number</td><td><input type = 'mobile_no' name = 'mobile_no'></td></tr>
+                <tr><td>Date Of Birth</td><td><input type = 'date' name = 'dob'></td></tr>
+                <tr><td>City</td><td><input type = 'city' name = 'city'></td></tr>
+                <tr><td>Country</td><td><input type = 'country' name = 'country'></td></tr>
+                <tr><td><input type = "submit" value = "Submit"></td></tr>
+            </table>
+        </form>
+        <a href = "{{url_for('login')}}">Sign in here</a>
+    </div>
+
+</body>
+</html>

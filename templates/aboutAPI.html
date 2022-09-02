@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- Created By CodingNepal - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!------<title> Website Layout | CodingLab</title>------>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/demo.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <style>
+      body {text-align: center;
+            }
+
+      h2 {
+         margin-top: 3%;
+         margin-bottom: 1%;
+          }
+      h3 {
+          margin-top: 0.8%;
+          margin-bottom: 0.5%   ;}
+      p {
+         margin-right: 5%;
+         margin-left: 5%;
+         }
+      #firstone {margin-top: 5%;}
+
+      #last {margin-bottom: 170%;}
+
+    </style>
+   </head>
+<body>
+  <nav>
+    <div class="menu">
+      <div class="logo">
+        <a href="#">OTP Service</a>
+      </div>
+      <ul>
+         <li><a href = "{{url_for('home')}}">Home</a></li>
+        <li><a href = "{{url_for('about')}}">About</a></li>
+        <li><a href = "{{url_for('services')}}">Services</a></li>
+        <li><a href = "{{url_for('contact')}}">Contact</a></li>
+        <li><a href = "{{url_for('feedback')}}">Feedback</a></li>
+        {% if session['email-id'] %}
+            <li><a href = "{{url_for('logout')}}">Logout</a></li>
+        {% else %}
+            <li><a href = "{{url_for('login')}}">Login</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </nav>
+  <br><br>
+  <h2 id = "firstone">What is API?</h2>
+  <p>API is short for Application Programming Interface.<br>
+    An API is an intermediary that relays communication between two programs in a format each respective
+    application can interpret. This allows owners to expose a part of the product’s functionality to
+    third parties while keeping the rest of the application safe.<br>As a marketer or content developer,
+    this is a great chance to access the systems of major products and
+    try to create new functionality. In this guide, we've compiled some of the best open APIs from the following categories:</p>
+  <h3>Marketing APIs</h3>
+  <h3>Website APIs</h3>
+  <h3>Email and Messaging APIs</h3>
+  <h3>Map APIs</h3>
+  <h3>News APIs</h3>
+  <h3>Image and Video APIs</h3>
+  <h3>Social Media APIs</h3>
+
+   <h2>What’s an open API?</h2>
+  <p>An open API, also referred to as a public API, is publicly published and freely shared.
+    Once published, an open API can be used by anyone in any way without organization interference.<br>
+    However, because the proprietary organization needs to maintain a level of safety and management with
+    the tool, there are certain limits to open APIs compared to other types of APIs.
+    API management ensures the application remains the best it can be to ensure all
+    users enjoy the same benefits.<br>
+    Publishing an open API might seem counterintuitive because of the security challenges. However,
+    it can also be an effective way of encouraging innovation and making your product better suited
+    for the market.</p>
+
+  <h2>What makes a good open API?</h2>
+  <p>Since open APIs are free to use and readily available to anyone, they’re not always going to be as
+    high-quality as partner APIs (which are premium services). When browsing for open APIs to use,
+    consider these criteria:</p>
+
+  <h3>Documentation</h3>
+  <p>No matter what API you’re working with, poor documentation is going to make you wish you weren’t.
+    The best APIs, including free APIs, craft their API documentation with care, and keep it updated in
+    a timely manner. Always skim an API’s documentation before diving in.</p>
+  <h3>Simplicity</h3>
+  <p>When it comes to the topic of APIs, “simple” is always a relative term. However, a good free API
+    structures its resources clearly and logically for easy-to-understand requests.</p>
+  <h3>Performance</h3>
+  <p>While free APIs may place lower limits on the number of requests allowed within a given time period,
+    performance should not suffer simply because the API is public. Slow API performance hurts user experience,
+    and may push users away from your app. If you can’t find a well-performing API that does what you want,
+    you might have to invest in a paid API instead.</p><br><br>
+
+</body>
+<footer class="text-center">
+  <p>Copyright &copy; OTPService.com</p>
+</footer>
+</html>
